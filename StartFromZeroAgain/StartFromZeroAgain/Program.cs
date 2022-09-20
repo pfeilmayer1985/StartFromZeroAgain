@@ -338,17 +338,13 @@ namespace StartFromZeroAgain
 
             //Aufgabe:Der Nutzer soll eine Zahl eingeben. Diese stellen die Anzahl der Sekunden dar.Konvertiere die Zahl in die
             //Anzahl der Tage, Stunden Minuten und restliche Sekunden. (90.061 => 1 Tag 1 Stunde 1 Minute 1 Sekunde )
-
+            /*
 
             Console.Write("Enter a number (of seconds): ");
             int seconds = Convert.ToInt32(Console.ReadLine());
-
-            int minutes = seconds / 60;
-            int remainingseconds;
+            int minutes;
             int hours;
             int days;
-            int fullminutes;
-
 
             days = seconds / 86400;
             hours = (seconds % 86400) / 3600;
@@ -361,6 +357,35 @@ namespace StartFromZeroAgain
 
             TimeSpan timeSpan = TimeSpan.FromSeconds(seconds);
             Console.WriteLine($"Days {timeSpan.Days} Hours {timeSpan.Hours} Minutes {timeSpan.Minutes} ");
+            */
+
+
+            //Aufgabe: Zähle die Vorkommnisse der einzelnen Buchstaben in „MissiSsiPpi“. Groß-Kleinschreibung kann ignoriert werden.
+            
+            /*
+            string word = "MissiSsiPpi";
+            string loweWord = word.ToLower();
+            int m = 0;
+            int i = 0;
+            int s = 0;
+            int p = 0;
+
+            foreach (char sChar in loweWord)
+            {
+                if (sChar == 'm')
+                    m++;
+                if (sChar == 'i')
+                    i++;
+                if (sChar == 's')
+                    s++;
+                if (sChar == 'p')
+                    p++;
+            }
+
+            Console.WriteLine($"Occurence of the letters in the word '{word}' : m - {m}, i - {i}, s - {s}, p - {p}.");
+            */
+
+
 
 
             Console.ReadLine();
