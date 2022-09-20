@@ -361,7 +361,7 @@ namespace StartFromZeroAgain
 
 
             //Aufgabe: Zähle die Vorkommnisse der einzelnen Buchstaben in „MissiSsiPpi“. Groß-Kleinschreibung kann ignoriert werden.
-            
+
             /*
             string word = "MissiSsiPpi";
             string loweWord = word.ToLower();
@@ -385,6 +385,35 @@ namespace StartFromZeroAgain
             Console.WriteLine($"Occurence of the letters in the word '{word}' : m - {m}, i - {i}, s - {s}, p - {p}.");
             */
 
+
+            //Wiederholung: Erstelle ein Array von einem beliebigen Datentyp.lasse das Array, einer vom Nutzer festgelegten Länge mit Werten in einer Schleife befüllen
+            //Nutze eine andere Schleifenart um die Daten auszugeben
+            //Bei Zahlenwerten: Bilde die Summe und den Durchschnitt und gebe die zwei Werte aus. (Zeichenketteninterpolation verwenden)
+
+
+            Console.Write("Enter the length of your Array : ");
+            int length = Convert.ToInt32(Console.ReadLine());
+            int[] myArray = new int[length];
+
+
+            for (int i = 0; i < length; i++)
+            {
+                Console.Write($"Enter the {i + 1} item of your array : ");
+                int item = Convert.ToInt32(Console.ReadLine());
+                myArray[i] = item;
+            }
+
+            Console.WriteLine("Your Array has the following elemens : ");
+
+            for (int i = 0; i < length; i++)
+            {
+                Console.Write($"{myArray[i]}, ");
+            }
+            Console.WriteLine();
+            Console.WriteLine($"Min Value : {myArray.Min()}");
+            Console.WriteLine($"Max Value : {myArray.Max()}");
+            Console.WriteLine($"Array Sum : {myArray.Sum()}");
+            Console.WriteLine($"Average Value: {myArray.Average()}");
 
 
 
