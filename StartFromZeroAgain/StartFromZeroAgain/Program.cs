@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -233,6 +236,131 @@ namespace StartFromZeroAgain
             Console.WriteLine($"The average entry in the array is : {theNewArray.Average()}.");
             */
 
+
+
+            //Aufgabe 5: Fizz-Buzz-Spiel: Gehe alle Zahlen von 1 bis 100 durch. Ist die Zahl ein
+            //Vielfaches von 3 [(Bedingung: index % 3 == 0) => % ist der Modulo Operator, welcher den
+            //Rest einer Division angibt.] dann gebe Fizz aus, ist die Zahl ein Vielfaches von 5 gebe Buzz aus,
+            //und wenn die Zahl ein Vielfaches von 5 und 3 (=> z.B. 15) gebe FizzBuzz anstatt die Zahl aus.
+
+            /*
+            for (int i = 1; i < 101; i++)
+            {
+
+                if (i % 3 == 0 && i % 5 == 0)
+                {
+                    Console.WriteLine("FizzBuzz");
+                }
+                else if (i % 3 == 0)
+                {
+                    Console.WriteLine("Fizz");
+                }
+                else if (i % 5 == 0)
+                {
+                    Console.WriteLine("Buzz");
+
+                }
+
+                else
+                {
+                    Console.WriteLine(i);
+                }
+            }
+            */
+
+            //While Schleife -> Ratespiel
+
+            /*
+            Console.Write("Enter a number : ");
+            int userGuess = Convert.ToInt32(Console.ReadLine());
+            bool gameState = true;
+
+            Random random = new Random();
+            int computerNumber = random.Next(0, 10);
+
+            do
+            {
+                if (userGuess == computerNumber)
+                {
+                    Console.WriteLine("You WON !");
+                    gameState = false;
+                }
+
+                else if (userGuess > computerNumber)
+                {
+                    Console.WriteLine("Try a smaller number");
+                    Console.Write("Try your luck again :");
+                    userGuess = Convert.ToInt32(Console.ReadLine());
+
+                }
+                else if (userGuess < computerNumber)
+                {
+                    Console.WriteLine("Try a biger number");
+                    Console.Write("Try your luck again :");
+                    userGuess = Convert.ToInt32(Console.ReadLine());
+                }
+            }
+            while (gameState);
+
+            */
+
+            //Frage den Nutzer nach seinem Namen. Wenn er keinen eingibt, Frage „hast du keinen Namen?“ und lasse den Nutzer die Eingabe erneut
+            //ausführen. Zähle anschließend den Buchstaben ‚a‘ im Namen und gebe aus wie oft dieser vorkommt. Lasse den Nutzer anschließend nochmal
+            //2 Zahlen eingeben, und gebe aus, welche Zahl größer ist.
+
+            /*
+
+            Console.Write("Your name is : ");
+            string userName = Console.ReadLine();
+            bool noName = true;
+
+            do
+            {
+                if (userName == "")
+                {
+                    Console.Write("Don't you have a name ? Let's try again");
+                    Console.Write("Your name is : ");
+                    userName = Console.ReadLine();
+                }
+                else
+                {
+                    noName = false;
+                }
+            } while (noName);
+
+            Console.WriteLine($"Your name is : {userName}");
+
+            string[] strings = userName.Split('a');
+
+            Console.WriteLine($"Your name contains letter 'a' {strings.Length - 1} times ");
+
+            */
+
+            //Aufgabe:Der Nutzer soll eine Zahl eingeben. Diese stellen die Anzahl der Sekunden dar.Konvertiere die Zahl in die
+            //Anzahl der Tage, Stunden Minuten und restliche Sekunden. (90.061 => 1 Tag 1 Stunde 1 Minute 1 Sekunde )
+
+
+            Console.Write("Enter a number (of seconds): ");
+            int seconds = Convert.ToInt32(Console.ReadLine());
+
+            int minutes = seconds / 60;
+            int remainingseconds;
+            int hours;
+            int days;
+            int fullminutes;
+
+
+            days = seconds / 86400;
+            hours = (seconds % 86400) / 3600;
+            minutes = ((seconds % 86400) % 3600) / 60;
+            seconds = ((seconds % 86400) % 3600) % 60;
+
+            Console.WriteLine($"Days {days} Hours {hours} Minutes {minutes} and  {seconds} seconds");
+
+            //pro version for the same issue
+
+            TimeSpan timeSpan = TimeSpan.FromSeconds(seconds);
+            Console.WriteLine($"Days {timeSpan.Days} Hours {timeSpan.Hours} Minutes {timeSpan.Minutes} ");
 
 
             Console.ReadLine();
