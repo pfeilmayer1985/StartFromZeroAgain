@@ -469,6 +469,7 @@ namespace StartFromZeroAgain
             {
                 eintraege.Add(sr.ReadLine().Split(';'));
                 //     Console.WriteLine(sr.ReadLine());
+
             }
 
             //for (int i = 0; i < 10; i++)
@@ -476,14 +477,19 @@ namespace StartFromZeroAgain
             //    Console.WriteLine(string.Join("\t", eintraege[i]));
             //}
 
-            for (int i = 0; i < eintraege.Count; i++)
+            using (StreamWriter write = new StreamWriter(@"C:\010 Projects\test\JungeHuepfer.csv"))
             {
-                if (Convert.ToInt32(eintraege[i][2]) < 20 && eintraege[i][0] == "m")
+
+                for (int i = 0; i < eintraege.Count; i++)
                 {
-                    Console.WriteLine(string.Join("\t", eintraege[i]));
+                    if (Convert.ToInt32(eintraege[i][2]) < 20 && eintraege[i][0] == "m")
+                    {
+                        write.WriteLine(string.Join(",", eintraege[i]));
+                        Console.WriteLine(string.Join("\t", eintraege[i]));
+
+                    }
                 }
             }
-
 
             Console.ReadLine();
 
