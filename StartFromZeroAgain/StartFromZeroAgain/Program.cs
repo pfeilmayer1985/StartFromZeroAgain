@@ -477,12 +477,30 @@ namespace StartFromZeroAgain
             //    Console.WriteLine(string.Join("\t", eintraege[i]));
             //}
 
-            using (StreamWriter write = new StreamWriter(@"C:\010 Projects\test\JungeHuepfer.csv"))
-            {
+            //using (StreamWriter write = new StreamWriter(@"C:\010 Projects\test\JungeHuepfer.csv"))
+            //{
 
+            //    for (int i = 0; i < eintraege.Count; i++)
+            //    {
+            //        if (Convert.ToInt32(eintraege[i][2]) < 20 && eintraege[i][0] == "m")
+            //        {
+            //            write.WriteLine(string.Join(",", eintraege[i]));
+            //            Console.WriteLine(string.Join("\t", eintraege[i]));
+
+            //        }
+            //    }
+            //}
+
+           // int age = 18;
+
+            for(int age = 18 ; age < 101; age++)
+
+                using (StreamWriter write = new StreamWriter($@"C:\010 Projects\test\Gewichte_{age}.csv", false))
+            {
+                    
                 for (int i = 0; i < eintraege.Count; i++)
                 {
-                    if (Convert.ToInt32(eintraege[i][2]) < 20 && eintraege[i][0] == "m")
+                    if (Convert.ToInt32(eintraege[i][2]) == age)
                     {
                         write.WriteLine(string.Join(",", eintraege[i]));
                         Console.WriteLine(string.Join("\t", eintraege[i]));
