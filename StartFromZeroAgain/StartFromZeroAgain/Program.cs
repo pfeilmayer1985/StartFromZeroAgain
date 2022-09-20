@@ -123,6 +123,115 @@ namespace StartFromZeroAgain
             Console.WriteLine($"Your text in lowercase : {mytext.ToLower()}");
             */
 
+            //Aufgabe1: Programm frägt den Nutzer nach einer Zahl z.B. 20 In der Forschleife wird bis 20 gezählt und die Werte werden immer addiert
+
+            /*
+            Console.Write("Your counter limit is : ");
+            int myCounterLimit = Convert.ToInt32(Console.ReadLine());
+            int sum = 0;
+
+            for (int i = 0; i < myCounterLimit; i++)
+            {
+                
+                Console.WriteLine($"Your current number is : {i}");
+                sum += i;
+                Console.WriteLine($"The sum is : {sum}");
+            }
+            */
+
+            //Aufgabe 2: Frage nach einer Zahl und zähle von dieser Rückwärts bis 0
+
+            /*
+            Console.Write("Your countdown number is : ");
+            int myCountdown = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = myCountdown; i >= 0; i--)
+            {
+                Console.WriteLine($"Countdown is at : {i}");
+            }
+            */
+
+
+            //Aufgabe 3: Laufe mit einer For-Schleife über die Namen der Azubis & Studenten. Wenn der Name des Azubis ein „e“ enthält, gebe den Namen aus, ansonsten nicht.
+
+            /*
+            string nameArray = "Mona,Marie,Erwin,Marcello,Jonas,Philipp,Andreas,Lukas,Johannes,Leon,Robin,Niklas,Robert,Jan";
+            string[] mySplittedArray = nameArray.Split(',');
+
+            foreach (string name in mySplittedArray)
+            {
+                bool nameFound = name.Contains("e");
+                if (nameFound)
+                { 
+                Console.WriteLine(name);
+                }
+            }
+
+            */
+
+            //Wiederhole das Ganze und lass den Nutzer einen Buchstaben bestimmen, nach dem gesucht wird.
+
+            /*
+            string nameArray = "Mona,Marie,Erwin,Marcello,Jonas,Philipp,Andreas,Lukas,Johannes,Leon,Robin,Niklas,Robert,Jan";
+            string[] mySplittedArray = nameArray.Split(',');
+            Console.WriteLine($"Your names are : {nameArray}");
+            Console.Write($"Choose a letter to search for : ");
+            string mySearchCriteria = Console.ReadLine();
+
+            foreach (string name in mySplittedArray)
+            {
+                bool entryFound = name.Contains(mySearchCriteria);
+                if (entryFound)
+                {
+                    Console.WriteLine(name);
+                }
+            }
+            */
+
+            //Aufgabe 4: Frage den Nutzer wie viele Einträge er in einem int-Array haben möchte. Initialisiere ein int-Array von dieser
+            //Größe und befülle dieses Int Array in einer Schleife, indem du den Nutzer jedes Mal frägst, welche Zahl eingetragen werden
+            //soll. => Gebe anschließend alle Zahlen nacheinander nochmal aus
+
+            /*
+            Console.Write("How many entries you want in your int-Array : ");
+            int userEntries = Convert.ToInt32(Console.ReadLine());
+
+            int[] myDefinedArray = new int[userEntries];
+            
+            for (int i = 0; i < myDefinedArray.Length; i++)
+            {
+                Console.Write($"Enter numer {i + 1} : ");
+                myDefinedArray[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            for (int i = 0; i < myDefinedArray.Length; i++)
+            {
+                Console.Write($"{myDefinedArray[i]}, ");
+            }
+            */
+
+            //Aufgabe 4b) Gehe das Int-array durch und gebe den Maximal-Wert aus, Minimal-Wert und den Durchschnitt.
+
+            /*
+            Console.Write("How many entries you want in your int-Array : ");
+            int arraySize = Convert.ToInt32(Console.ReadLine());
+            int[] theNewArray = new int[arraySize];
+
+            for (int i = 0; i < theNewArray.Length; i++)
+            {
+                Console.Write($"Enter numer {i + 1} : ");
+                theNewArray[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            for (int i = 0; i < theNewArray.Length; i++)
+            {
+                Console.Write($"{theNewArray[i]}, ");
+            }
+
+            Console.WriteLine($"The smallest entry in the array is : {theNewArray.Min()}.");
+            Console.WriteLine($"The bigest entry in the array is : {theNewArray.Max()}.");
+            Console.WriteLine($"The average entry in the array is : {theNewArray.Average()}.");
+            */
 
 
 
