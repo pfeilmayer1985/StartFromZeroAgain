@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Security.Cryptography;
@@ -390,7 +391,7 @@ namespace StartFromZeroAgain
             //Nutze eine andere Schleifenart um die Daten auszugeben
             //Bei Zahlenwerten: Bilde die Summe und den Durchschnitt und gebe die zwei Werte aus. (Zeichenketteninterpolation verwenden)
 
-
+            /*
             Console.Write("Enter the length of your Array : ");
             int length = Convert.ToInt32(Console.ReadLine());
             int[] myArray = new int[length];
@@ -414,7 +415,74 @@ namespace StartFromZeroAgain
             Console.WriteLine($"Max Value : {myArray.Max()}");
             Console.WriteLine($"Array Sum : {myArray.Sum()}");
             Console.WriteLine($"Average Value: {myArray.Average()}");
+            */
 
+
+            //List<int> list = new List<int>() { 5, 3, 7 };
+
+
+            //FileInfo fi = new FileInfo("T:/WKH_EXC/Trash/cbec/BMI-data.csv");
+            //fi.CopyTo("C:/010 Projects/001 StartFromZeroAgain/meine_datei_123.csv");
+            //fi.CopyTo("C:/010 Projects/001 StartFromZeroAgain/meine_datei_13.csv");
+            //FileInfo fileInfo = new FileInfo("C:/010 Projects/001 StartFromZeroAgain/meine_datei_13.csv");
+            //fileInfo.Delete();
+
+            //Console.WriteLine("Enter path to : ");
+            //string path = Console.ReadLine();
+            //DirectoryInfo di = new DirectoryInfo(path);
+            //while (di.Exists == false)
+            //{
+            //    Console.WriteLine("The path does not exist. Enter path to : ");
+            //    path = Console.ReadLine();
+            //    di = new DirectoryInfo(path);
+            //}
+            //path.Replace("\\", "\\\\");
+
+            //Console.WriteLine("Name for the file: ");
+            //string fileName = Console.ReadLine();
+
+            //fi.CopyTo(path + "\\" + fileName);
+
+            /*
+            FileInfo fi = new FileInfo("T:/WKH_EXC/Trash/cbec/BMIS-data.csv");
+            
+            if (fi.Exists)
+            {
+                //Execute only if file exists
+                Console.WriteLine("Copying");
+                fi.CopyTo("C:\\010 Projects\\test\\");
+            }
+            */
+
+            //           string path = "C:\\010 Projects\\test\\watever.csv";
+
+            string path = @"C:\010 Projects\test\whatever.csv";
+
+            StreamReader sr = new StreamReader(path);
+
+            List<string[]> eintraege = new List<string[]>();
+
+            //ignoring the header
+            sr.ReadLine();
+
+            while (!sr.EndOfStream)
+            {
+                eintraege.Add(sr.ReadLine().Split(';'));
+                //     Console.WriteLine(sr.ReadLine());
+            }
+
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    Console.WriteLine(string.Join("\t", eintraege[i]));
+            //}
+
+            for (int i = 0; i < eintraege.Count; i++)
+            {
+                if (Convert.ToInt32(eintraege[i][2]) < 20 && eintraege[i][0] == "m")
+                {
+                    Console.WriteLine(string.Join("\t", eintraege[i]));
+                }
+            }
 
 
             Console.ReadLine();
